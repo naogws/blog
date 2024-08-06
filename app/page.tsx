@@ -1,11 +1,14 @@
 import { Space_Mono } from 'next/font/google';
 import Splash from '@/components/Home/Splash';
 import Socials from '@/components/Home/Socials';
+import BlogLayout from '@/components/Blog/BlogLayout';
 
 const spaceMono = Space_Mono({
   weight: ['400', '700'],
   subsets: ['latin'],
 });
+
+export const fetchCache = 'force-no-store';
 
 export default function Home() {
   return (
@@ -18,6 +21,8 @@ export default function Home() {
         <hr className='mobile-only opacity-25' />
         <Socials />
       </div>
+      <hr className='w-full opacity-25' />
+      <BlogLayout />
     </main>
   );
 }

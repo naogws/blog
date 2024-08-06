@@ -16,8 +16,11 @@ const config: Config = {
         border: '#505050',
         highlight: '#FF6347',
       },
+      borderWidth: {
+        '1': '1px',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
 export default config;
