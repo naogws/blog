@@ -1,5 +1,5 @@
 import { BlogPost } from '@/app/lib/interface';
-import { getPostBySlug } from '@/components/Blog/getPost';
+import { getPostBySlug } from '@/app/lib/getPostBySlug';
 import { PortableText } from '@portabletext/react';
 import { PortableTextComponent } from '@/components/Blog/PortableTextComponent';
 import { urlFor } from '@/app/lib/sanity';
