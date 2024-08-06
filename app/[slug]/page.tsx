@@ -4,6 +4,7 @@ import { PortableText } from '@portabletext/react';
 import { PortableTextComponent } from '@/components/Blog/PortableTextComponent';
 import { urlFor } from '@/app/lib/sanity';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export const fetchCache = 'force-no-store';
 
@@ -13,6 +14,10 @@ export default async function BlogPostComponent({
   params: { slug: string };
 }) {
   const post: BlogPost = await getPostBySlug(params.slug);
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <div className='flex flex-col space-y-12 mb-12'>

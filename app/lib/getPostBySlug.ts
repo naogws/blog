@@ -21,6 +21,10 @@ export async function getPostBySlug(slug: string) {
 
   const data = await client.fetch(query);
 
+  if (!data) {
+    return null;
+  }
+
   data.postedAt = formatDate(data.postedAt);
   data.editedAt = formatDate(data.editedAt);
 

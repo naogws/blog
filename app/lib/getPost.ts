@@ -26,5 +26,9 @@ export default async function getPost() {
     post.postedAt = formatDate(post.postedAt);
   });
 
+  if (!data) {
+    return null;
+  }
+
   return data;
 }
